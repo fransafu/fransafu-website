@@ -1,1 +1,10 @@
-<app-post-preview></app-post-preview>
+<div class="container">
+    <div class="container__title">
+        Fransafu's Blog
+    </div>
+    <div class="container__body">
+        <div *ngFor="let post of posts">
+            <app-post-preview [content]="post.content" [img]="post.img"></app-post-preview>
+        </div>
+    </div>
+</div>

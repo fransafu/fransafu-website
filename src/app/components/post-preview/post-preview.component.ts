@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-post-preview',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-preview.component.scss']
 })
 export class PostPreviewComponent implements OnInit {
+  @Input() img: string = '';
+  @Input() content: string = '';
 
   constructor() { }
 

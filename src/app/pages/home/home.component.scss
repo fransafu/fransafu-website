@@ -1,0 +1,23 @@
+.container {
+    height: 100%;
+    margin: 0;
+
+    &__title {
+        height: 10%;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        font-size: 25px;
+        background-color: red;
+    }
+
+    &__body {
+        height: 90%;
+
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        background-color: blue;
+    }
+}
