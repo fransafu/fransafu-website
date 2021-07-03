@@ -1,9 +1,16 @@
 <mat-card class="container">
-    <img *ngIf="img != ''" mat-card-image src="{{img}}">
-    <mat-card-content>
-        <p>{{content}}</p>
+    <div>
+        <img *ngIf="img != ''" mat-card-image src="{{img}}">
+    </div>
+    <mat-card-header>
+        <mat-card-title>CARD TITLE</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="container__content">
+        <p>
+            {{content}}
+        </p>
     </mat-card-content>
     <mat-card-actions class="container__button">
-        <button mat-button>View</button>
+        <button mat-stroked-button color="primary">View</button>
     </mat-card-actions>
 </mat-card>

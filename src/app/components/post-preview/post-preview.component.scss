@@ -2,6 +2,11 @@
     max-width: 250px;
     margin: 5px;
 
+    &__content {
+        max-height: 300px;
+        overflow: auto;
+    }
+
     &__button {
         display: flex;
         justify-content: center;
