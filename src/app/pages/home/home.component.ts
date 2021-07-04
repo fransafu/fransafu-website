@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IPostResponse, PostService } from 'src/app/shared/service/post.service';
 
 @Component({
   selector: 'app-home',
@@ -7,30 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public posts: any[];
+  public postsDataSource: IPostResponse | null = null;
 
-  constructor() {
-    this.posts = [
-      {
-        img: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-        content: 'hasdjkahskldjklasdjkljd kasjhdklasjdlñksjalñkd sahdlkasjdklsajd askjdhaslkjjdklsaj salkjdklasjdklasjdl lkajsdkljasdklasjkd'
-      },
-      {
-        img: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-        content: 'hasdjkahskldjklasdjkljd kasjhdklasjdlñksjalñkd sahdlkasjdklsajd askjdhaslkjjdklsaj salkjdklasjdklasjdl lkajsdkljasdklasjkd'
-      },
-      {
-        img: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-        content: 'hasdjkahskldjklasdjkljd kasjhdklasjdlñksjalñkd sahdlkasjdklsajd askjdhaslkjjdklsaj salkjdklasjdklasjdl lkajsdkljasdklasjkd'
-      },
-      {
-        img: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-        content: 'hasdjkahskldjklasdjkljd kasjhdklasjdlñksjalñkd sahdlkasjdklsajd askjdhaslkjjdklsaj salkjdklasjdklasjdl lkajsdkljasdklasjkd'
-      }
-    ]
-  }
+  constructor(
+    private _postService: PostService,
+  ) { }
 
   ngOnInit(): void {
+    this._postService.getPosts()
+      .subscribe(
+        (data) => {
+          this.postsDataSource = data;
+        },
+        (error) => {
+          console.error(error);
+        }
+      )
   }
 
 }
