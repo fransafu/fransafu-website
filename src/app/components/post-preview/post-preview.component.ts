@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PostPreviewComponent implements OnInit {
   @Input() img: string = '';
+  @Input() title: string = '';
   @Input() content: string = '';
 
   constructor() { }
